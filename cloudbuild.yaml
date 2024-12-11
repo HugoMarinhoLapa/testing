@@ -1,0 +1,4 @@
+steps:
+- name: 'python:3.9' # Or another suitable Python image
+  entrypoint: 'python'
+  args: ['main.py']
