@@ -3,4 +3,4 @@ steps:
   entrypoint: 'python'
   args: ['main.py']
 options:
-  logging: CLOUD_LOGGING_ONLYT
+  logging: CLOUD_LOGGING_ONLY
