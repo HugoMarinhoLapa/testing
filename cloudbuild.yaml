@@ -1,6 +1,15 @@
+# steps:
+# - name: 'python:3.9' # Or another suitable Python image
+#   entrypoint: 'python'
+#   args: ['main.py']
+# options:
+#   logging: CLOUD_LOGGING_ONLY
+
 steps:
-- name: 'python:3.9' # Or another suitable Python image
-  entrypoint: 'python'
-  args: ['main.py']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-image:$SHORT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/my-image:$SHORT_SHA']
+
 options:
   logging: CLOUD_LOGGING_ONLY
